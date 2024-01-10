@@ -1,4 +1,4 @@
-import questionObj from "./question.js";
+const questions = require("./questions");
 
 const body = document.getElementsByTagName("body");
 const container = document.createElement("main");
@@ -19,5 +19,3 @@ word.className = "word";
 question.className = "question";
 
 statusCount.className = "status";
-
-console.log(questionObj);
