@@ -1,4 +1,4 @@
-const question = [
+const questionsObj = [
   {
     question: "What color do you get when you mix Blue and Yellow?",
     answer: "Green",
@@ -40,3 +40,5 @@ const question = [
     answer: "White",
   },
 ];
+
+export default questionsObj;
