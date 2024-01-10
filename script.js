@@ -1,4 +1,4 @@
-const body = document.getElementsByTagName("body")[0];
+const body = document.querySelector("body");
 const container = document.createElement("main");
 const gallows = document.createElement("section");
 const word = document.createElement("section");
@@ -28,3 +28,44 @@ container.appendChild(question);
 container.appendChild(statusCount);
 container.appendChild(keyboard);
 body.appendChild(container);
+
+//
+//create virtual keyboard
+
+const alphabet = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+
+alphabet.forEach((letter, index) => {
+  const button = document.createElement("div");
+  button.className = "keyboard__button";
+  button.innerText = letter.toUpperCase();
+  keyboard.appendChild(button);
+});
+
+const buttons = keyboard.querySelectorAll("div");
