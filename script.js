@@ -1,14 +1,37 @@
-const body = document.querySelector("body");
+//
+// create elements
+
+const body = document.getElementsByTagName("body")[0];
 const main = document.createElement("main");
-const gallows = document.createElement("section");
-const word = document.createElement("section");
-const question = document.createElement("section");
-const statusCount = document.createElement("section");
-const keyboard = document.createElement("section");
+const gallows = document.createElement("figure");
+const container = document.createElement("section");
+const word = document.createElement("div");
+const question = document.createElement("div");
+const statusCount = document.createElement("div");
+const keyboard = document.createElement("div");
+
+//
+// create structure DOM
+
+container.appendChild(gallows);
+container.appendChild(word);
+container.appendChild(question);
+container.appendChild(statusCount);
+container.appendChild(keyboard);
+
+main.appendChild(gallows);
+main.appendChild(container);
+
+body.appendChild(main);
+
+//
+// add CSS class for element
 
 body.className = "page";
 
 main.className = "main";
+
+container.className = "container";
 
 gallows.className = "gallows";
 
@@ -20,16 +43,8 @@ statusCount.className = "status";
 
 keyboard.className = "keyboard";
 
-main.appendChild(gallows);
-main.appendChild(word);
-main.appendChild(gallows);
-main.appendChild(question);
-main.appendChild(statusCount);
-main.appendChild(keyboard);
-body.appendChild(main);
-
 //
-//create virtual keyboard
+// create virtual keyboard
 
 const alphabet = [
   "a",
@@ -68,3 +83,62 @@ alphabet.forEach((letter, index) => {
 });
 
 const buttons = keyboard.querySelectorAll("div");
+
+//
+// create gallows
+
+const hanger = document.createElement("img");
+const dollHead = document.createElement("img");
+const dollHandOne = document.createElement("img");
+const dollHandTwo = document.createElement("img");
+const dollBody = document.createElement("img");
+const dollLegOne = document.createElement("img");
+const dollLegTwo = document.createElement("img");
+
+gallows.appendChild(hanger);
+gallows.appendChild(dollHead);
+gallows.appendChild(dollHandOne);
+gallows.appendChild(dollBody);
+gallows.appendChild(dollHandTwo);
+gallows.appendChild(dollLegOne);
+gallows.appendChild(dollLegTwo);
+
+hanger.src = "picture/hanger.svg";
+dollHead.src = "picture/doll/head.svg";
+dollBody.src = "picture/doll/body.svg";
+dollHandOne.src = "picture/doll/hand-one.svg";
+dollHandTwo.src = "picture/doll/hand-two.svg";
+dollLegOne.src = "picture/doll/leg-one.svg";
+dollLegTwo.src = "picture/doll/leg-two.svg";
+
+hanger.className = "gallows__hanger";
+dollHead.className = "gallows__doll-head";
+dollBody.className = "gallows__doll-body";
+dollHandOne.className = "gallows__doll-hand-one";
+dollHandTwo.className = "gallows__doll-hand-two";
+dollLegOne.className = "gallows__doll-leg-one";
+dollLegTwo.className = "gallows__doll-leg-two";
+
+/* dollHead.hidden = true;
+dollBody.hidden = true;
+dollHandOne.hidden = true;
+dollHandTwo.hidden = true;
+dollLegOne.hidden = true;
+dollLegTwo.hidden = true; */
+
+//
+// create word field
+
+const answer = questions[1].answer; // test
+
+for (let i = 0; i < answer.length; i++) {
+  const letter = document.createElement("div");
+  letter.className = "word__letter";
+  letter.innerText = answer.charAt(i); // test
+  word.appendChild(letter);
+}
+
+//
+// create question field
+
+question.innerText = questions[1].question; // test
