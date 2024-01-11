@@ -39,7 +39,7 @@ word.className = "word";
 
 question.className = "question";
 
-statusCount.className = "status";
+statusCount.className = "status-count";
 
 keyboard.className = "keyboard";
 

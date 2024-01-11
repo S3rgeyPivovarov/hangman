@@ -1,0 +1,129 @@
+.page {
+  background-color: black; /* test */
+  font-family: monospace;
+}
+
+.main {
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: 1440px;
+  padding: 50px;
+  background-color: white; /* test */
+
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.gallows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallows__figure-wrapper {
+  position: relative;
+  width: 500px;
+  height: 823px;
+}
+
+.gallows__hanger {
+  position: static;
+  width: 100%;
+  height: auto;
+}
+
+.gallows__doll-head {
+  position: absolute;
+  top: 26%;
+  right: 1.5%;
+  width: 25%;
+  height: auto;
+  z-index: 2;
+}
+
+.gallows__doll-body {
+  position: absolute;
+  top: 42%;
+  right: 13.5%;
+  width: 1.2%;
+  height: auto;
+  z-index: 2;
+}
+
+.gallows__doll-hand-one {
+  position: absolute;
+  top: 42%;
+  right: 15%;
+  width: 20%;
+  height: auto;
+  z-index: 2;
+}
+
+.gallows__doll-hand-two {
+  position: absolute;
+  top: 42%;
+  right: -7%;
+  width: 20%;
+  height: auto;
+  z-index: 2;
+}
+
+.gallows__doll-leg-one {
+  position: absolute;
+  top: 62%;
+  right: 15%;
+  width: 20%;
+  height: auto;
+  z-index: 2;
+}
+
+.gallows__doll-leg-two {
+  position: absolute;
+  top: 62%;
+  right: -7%;
+  width: 20%;
+  height: auto;
+  z-index: 2;
+}
+
+.gallows__figure-caption {
+  font-size: 64px;
+  font-weight: 800;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.word {
+  display: flex;
+}
+
+.question {
+}
+
+.status-count {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.keyboard__button {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  text-align: center;
+  padding-top: 15px;
+
+  border-radius: 5px;
+  background-color: aqua;
+}
