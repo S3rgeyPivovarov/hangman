@@ -3,7 +3,7 @@
 
 const body = document.getElementsByTagName("body")[0];
 const main = document.createElement("main");
-const gallows = document.createElement("figure");
+const gallows = document.createElement("section");
 const container = document.createElement("section");
 const word = document.createElement("div");
 const question = document.createElement("div");
@@ -87,6 +87,8 @@ const buttons = keyboard.querySelectorAll("div");
 //
 // create gallows
 
+const figureWrapper = document.createElement("figure");
+
 const hanger = document.createElement("img");
 const dollHead = document.createElement("img");
 const dollHandOne = document.createElement("img");
@@ -95,13 +97,18 @@ const dollBody = document.createElement("img");
 const dollLegOne = document.createElement("img");
 const dollLegTwo = document.createElement("img");
 
-gallows.appendChild(hanger);
-gallows.appendChild(dollHead);
-gallows.appendChild(dollHandOne);
-gallows.appendChild(dollBody);
-gallows.appendChild(dollHandTwo);
-gallows.appendChild(dollLegOne);
-gallows.appendChild(dollLegTwo);
+const figureCaption = document.createElement("figcaption");
+
+figureWrapper.appendChild(hanger);
+figureWrapper.appendChild(dollHead);
+figureWrapper.appendChild(dollHandOne);
+figureWrapper.appendChild(dollBody);
+figureWrapper.appendChild(dollHandTwo);
+figureWrapper.appendChild(dollLegOne);
+figureWrapper.appendChild(dollLegTwo);
+
+gallows.appendChild(figureWrapper);
+gallows.appendChild(figureCaption);
 
 hanger.src = "picture/hanger.svg";
 dollHead.src = "picture/doll/head.svg";
@@ -118,6 +125,11 @@ dollHandOne.className = "gallows__doll-hand-one";
 dollHandTwo.className = "gallows__doll-hand-two";
 dollLegOne.className = "gallows__doll-leg-one";
 dollLegTwo.className = "gallows__doll-leg-two";
+
+figureWrapper.className = "gallows__figure-wrapper";
+
+figureCaption.className = "gallows__figure-caption";
+figureCaption.innerText = "HANGMAN GAME";
 
 /* dollHead.hidden = true;
 dollBody.hidden = true;
@@ -142,3 +154,18 @@ for (let i = 0; i < answer.length; i++) {
 // create question field
 
 question.innerText = questions[1].question; // test
+
+//
+// create status count
+
+const countText = document.createElement("label");
+const countValue = document.createElement("div");
+
+statusCount.appendChild(countText);
+statusCount.appendChild(countValue);
+
+countText.className = "status-count__text";
+countValue.className = "status-count__value";
+
+countText.innerText = "Incorrect guesses:";
+countValue.innerText = "0 / 6"; // test
