@@ -146,7 +146,7 @@ const answer = questions[1].answer; // test
 for (let i = 0; i < answer.length; i++) {
   const letter = document.createElement("div");
   letter.className = "word__letter";
-  letter.innerText = answer.charAt(i); // test
+  letter.innerText = answer.charAt(i).toUpperCase(); // test
   word.appendChild(letter);
 }
 
